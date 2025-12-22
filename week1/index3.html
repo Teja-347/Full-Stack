@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Combined: Products & College Timetable</title>
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 20px;
+			background: #fff;
+		}
+
+		/* Shared table shell */
+		.card-table {
+			border-collapse: separate;
+			border-spacing: 8px;
+			width: 100%;
+			max-width: 1000px;
+			margin: 12px auto;
+			border: 2px solid #000;
+			padding: 6px;
+			box-sizing: border-box;
+			background: #fff;
+		}
+
+		.card-table thead th {
+			background: #f6f6f6;
+			padding: 12px;
+			border: 3px solid #777;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+
+		.card-table td {
+			vertical-align: middle;
+			text-align: center;
+			padding: 18px 12px;
+			border: 3px solid #777;
+			background: #ffffff;
+			box-sizing: border-box;
+		}
+
+		/* Product-specific tweaks */
+		.product-table .col-id { width: 10%; }
+		.product-table .col-name { width: 28%; text-align: left; padding-left: 24px; font-family: "Courier New", Courier, monospace; }
+		.product-table .col-cost { width: 14%; }
+		.product-table .col-image { width: 24%; }
+
+		.img-box {
+			display: inline-block;
+			width: 90px;
+			height: 90px;
+			padding: 6px;
+			border: 2px solid #cfcfcf;
+			background: #fff;
+			box-shadow: none;
+			vertical-align: middle;
+		}
+
+		.img-box img { max-width:100%; max-height:100%; display:block; margin:0 auto; }
+
+		/* Timetable-specific tweaks */
+		.timetable .col-sno { width: 8%; }
+		.timetable .col-subject { width: 20%; text-align: left; padding-left: 24px; font-family: "Courier New", Courier, monospace; }
+		.timetable .col-code { width: 12%; }
+		.timetable .col-faculty { width: 18%; text-align: left; padding-left: 12px; }
+		.timetable .col-day { width: 14%; }
+
+		.btn {
+			display: inline-block;
+			padding: 6px 12px;
+			border: 2px solid #999;
+			background: #eee;
+			font-size: 13px;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+
+		.btn:active { transform: translateY(1px); }
+
+		@media (max-width:640px) {
+			.card-table, .card-table thead, .card-table tbody, .card-table th, .card-table td, .card-table tr { display:block; }
+			.card-table thead { display:none; }
+			.card-table tr { margin-bottom: 18px; }
+			.card-table td { border: 2px solid #777; display:flex; justify-content:space-between; padding:10px; }
+		}
+	</style>
+</head>
+<body>
+
+	<h2 style="text-align:center">Products</h2>
+
+	<table class="card-table product-table" aria-label="Products">
+		<thead>
+			<tr>
+				<th class="col-id">P_ID</th>
+				<th class="col-name">P_NAME</th>
+				<th class="col-cost">P_COST</th>
+				<th class="col-image">P_IMAGE</th>
+				<th class="update-col">UPDATE</th>
+				<th class="delete-col">DELETE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="col-id">111</td>
+				<td class="col-name">P_ONE</td>
+				<td class="col-cost">₹ 10000</td>
+				<td class="col-image">
+					<div class="img-box">
+						<img src="flipkart-logo-png_seeklogo-284422.png" alt="Flipkart logo">
+					</div>
+				</td>
+				<td class="update-col"><button class="btn">UPDATE</button></td>
+				<td class="delete-col"><button class="btn">DELETE</button></td>
+			</tr>
+			<tr>
+				<td class="col-id">222</td>
+				<td class="col-name">P_TWO</td>
+				<td class="col-cost">₹ 20000</td>
+				<td class="col-image">
+					<div class="img-box">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon logo">
+					</div>
+				</td>
+				<td class="update-col"><button class="btn">UPDATE</button></td>
+				<td class="delete-col"><button class="btn">DELETE</button></td>
+			</tr>
+			<tr>
+				<td class="col-id">333</td>
+				<td class="col-name">P_THREE</td>
+				<td class="col-cost">₹ 30000</td>
+				<td class="col-image">
+					<div class="img-box">
+						<img src="download.png" alt="Myntra logo">
+					</div>
+				</td>
+				<td class="update-col"><button class="btn">UPDATE</button></td>
+				<td class="delete-col"><button class="btn">DELETE</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2 style="text-align:center; margin-top:36px;">College Timetable</h2>
+
+	<table class="card-table timetable" aria-label="College Timetable">
+		<thead>
+			<tr>
+				<th class="col-sno">S.NO</th>
+				<th class="col-subject">SUBJECT</th>
+				<th class="col-code">COURSE CODE</th>
+				<th class="col-faculty">FACULTY NAME</th>
+				<th class="col-day">DAY</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="col-sno">1</td>
+				<td class="col-subject">Full Stack Development</td>
+				<td class="col-code">CS-401</td>
+				<td class="col-faculty">Dr. Rajesh Kumar</td>
+				<td class="col-day">Monday</td>
+			</tr>
+			<tr>
+				<td class="col-sno">2</td>
+				<td class="col-subject">Computer Networks</td>
+				<td class="col-code">CS-305</td>
+				<td class="col-faculty">Prof. Priya Sharma</td>
+				<td class="col-day">Tuesday</td>
+			</tr>
+			<tr>
+				<td class="col-sno">3</td>
+				<td class="col-subject">Mathematical Optimization</td>
+				<td class="col-code">CS-410</td>
+				<td class="col-faculty">Dr. Vikram Patel</td>
+				<td class="col-day">Wednesday</td>
+			</tr>
+			<tr>
+				<td class="col-sno">4</td>
+				<td class="col-subject">Design and Analysis of Algorithms</td>
+				<td class="col-code">CS-301</td>
+				<td class="col-faculty">Prof. Neha Singh</td>
+				<td class="col-day">Thursday</td>
+			</tr>
+			<tr>
+				<td class="col-sno">5</td>
+				<td class="col-subject">Web Technologies</td>
+				<td class="col-code">CS-402</td>
+				<td class="col-faculty">Mr. Arjun Desai</td>
+				<td class="col-day">Friday</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
